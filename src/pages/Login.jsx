@@ -10,9 +10,10 @@ const LoginLayout = styled.main`
 
   display: grid;
   grid-template-columns: 60rem;
-  align-content: center;
+  align-content: flex-start;
+  padding-top: 2vh;
   justify-content: center;
-  gap: 2.2rem;
+  gap: 1.1rem;
   background: url("/SUN.jpg") no-repeat;
   background-size: cover;
   background-position: center;
