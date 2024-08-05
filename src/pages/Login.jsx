@@ -13,8 +13,6 @@ const LoginLayout = styled.main`
   align-content: center;
   justify-content: center;
   gap: 2.2rem;
-  /* background-color: var(--color-grey-50); */
-
   background: url("/SUN.jpg") no-repeat;
   background-size: cover;
   background-position: center;
@@ -25,27 +23,33 @@ const LoginLayout = styled.main`
   main {
     /* overflow-y: auto; */
 
-    input:type password {
-    /* width: 100%; */
-  }
+    input[type="password"] {
+      /* width: 100%; */
+    }
   }
 
   h2 {
     text-align: center;
-    min-width: 0px;
+    min-width: 0;
   }
+
   h3 {
     text-align: center;
+    max-width: 100%; /* Prevents overflowing */
+    overflow-wrap: break-word; /* Ensures long words break correctly */
   }
+
   @media (max-width: 650px) {
     main {
       width: 95vw;
       margin: 0 auto;
     }
+
     form {
       /* width: 90vw; */
       margin: 0 auto;
       font-size: 1.2rem;
+
       button {
         font-size: 1.4rem;
         width: 60%;
@@ -55,48 +59,51 @@ const LoginLayout = styled.main`
 
     h3 {
       font-size: 1.4rem;
-      text-align: center;
     }
+
     h4 {
       font-size: 2.5rem;
     }
   }
+
   @media (max-width: 420px) {
     align-content: flex-start;
     gap: 1.2rem;
+
     h4 {
       font-size: 1.8rem;
-      width:100%;
-      max-width: 100%;
     }
+
     h3 {
-      max-width: 100%;
-      width: 99%;
       font-size: 1.2rem;
+      max-width: 100%; /* Ensures h3 does not overflow */
+      overflow-wrap: break-word;
     }
+
     main {
       padding-top: 40px;
       padding-bottom: 20px;
     }
+
     form {
       min-width: 280px;
+
       button {
         font-size: 1.2rem;
         width: 60%;
-   
       }
     }
   }
-}
-  @media (max-width: 320px) {
-   
-    
+
+  @media (max-width: 360px) {
     h4 {
       font-size: 1.4rem;
     }
+
     h3 {
       font-size: 1.1rem;
     }
+
     form {
       button {
         font-size: 1.1rem;
