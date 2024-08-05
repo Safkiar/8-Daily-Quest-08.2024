@@ -117,7 +117,8 @@ const LoginLayout = styled.main`
 const Wrapper = styled.main`
   position: relative;
   width: 100%;
-  height: 500px;
+  height: 460px;
+  /* height: 500px; */
   background: transparent;
   border: 3px solid rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(40px);

@@ -36,11 +36,12 @@ const Form = styled.form`
     props.typeA === "typeA" &&
     css`
       width: 100%;
-      padding: 40px;
+      padding: 20px 30px;
       transition: 0.18s ease transform;
       translate: 0;
       background-color: transparent;
       border: none;
+      height: auto;
 
       ${({ action }) =>
         action &&
@@ -56,7 +57,8 @@ const Form = styled.form`
       transform: translateX(600px);
       /* transition: none; */
       width: 100%;
-      padding: 40px;
+      height: auto;
+      padding: 20px 30px;
       transition: 0.28s ease transform;
       background-color: transparent;
       border: none;
