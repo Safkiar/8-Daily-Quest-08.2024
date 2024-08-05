@@ -67,9 +67,11 @@ const LoginLayout = styled.main`
     h4 {
       font-size: 1.8rem;
       width:100%;
+      max-width: 100%;
     }
     h3 {
-  
+      max-width: 100%;
+      width: 99%;
       font-size: 1.2rem;
     }
     main {
