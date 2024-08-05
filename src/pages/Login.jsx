@@ -14,7 +14,8 @@ const LoginLayout = styled.main`
   justify-content: center;
   gap: 2.2rem;
   /* background-color: var(--color-grey-50); */
-  background: url("../../public/sun.jpg") no-repeat;
+
+  background: url("/SUN.jpg") no-repeat;
   background-size: cover;
   background-position: center;
   overflow: hidden;
