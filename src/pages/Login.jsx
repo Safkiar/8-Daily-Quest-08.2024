@@ -172,10 +172,9 @@ function Login() {
 
   return (
     <LoginLayout>
-      <Logo />
+      {/* <Logo /> */}
       <Heading as="h4">Your Quests are waiting for you!</Heading>
-      <Heading as="h3">For test purposes</Heading>
-      <Heading as="h3">use login and password:</Heading>
+      <Heading as="h3">Use login and password:</Heading>
       <Heading as="h3">user@example.com</Heading>
       <Wrapper>
         <LoginForm action={action} registerLink={registerLink} />
