@@ -5,15 +5,20 @@ import FormRow from "../../ui/FormRow";
 import Input from "../../ui/Input";
 
 import { useUpdateUser } from "./useUpdateUser";
+import { useUser } from "./useUser";
 
 function UpdatePasswordForm() {
   const { register, handleSubmit, formState, getValues, reset } = useForm();
   const { errors } = formState;
-
+  const { user } = useUser();
   const { updateUser, isUpdating } = useUpdateUser();
 
+  const isEmailRestricted = user.email === "user@example.com";
+
   function onSubmit({ password }) {
-    updateUser({ password }, { onSuccess: reset });
+    if (!isEmailRestricted) {
+      updateUser({ password }, { onSuccess: reset });
+    }
   }
 
   return (
@@ -26,7 +31,7 @@ function UpdatePasswordForm() {
           type="password"
           id="password"
           autoComplete="current-password"
-          disabled={isUpdating}
+          disabled={isUpdating || isEmailRestricted}
           {...register("password", {
             required: "This field is required",
             minLength: {
@@ -45,7 +50,7 @@ function UpdatePasswordForm() {
           type="password"
           autoComplete="new-password"
           id="passwordConfirm"
-          disabled={isUpdating}
+          disabled={isUpdating || isEmailRestricted}
           {...register("passwordConfirm", {
             required: "This field is required",
             validate: (value) =>
@@ -53,11 +58,22 @@ function UpdatePasswordForm() {
           })}
         />
       </FormRow>
+
+      {isEmailRestricted && (
+        <FormRow>
+          <p style={{ color: "red" }}>
+            You cannot change the password for this email address.
+          </p>
+        </FormRow>
+      )}
+
       <FormRow>
         <Button onClick={reset} type="reset" variation="secondary">
           Cancel
         </Button>
-        <Button disabled={isUpdating}>Update password</Button>
+        <Button disabled={isUpdating || isEmailRestricted}>
+          Update password
+        </Button>
       </FormRow>
     </Form>
   );
