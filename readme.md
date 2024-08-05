@@ -1,3 +1,3 @@
-# The Wild Oasis
+# Daily Quest
 
-The most advanced react project.
+Make your quest done
