@@ -15,12 +15,14 @@ const StyledModal = styled.div`
   padding: 3.2rem 4rem;
   transition: all 0.5s;
   z-index: 1001;
+  height: ;
   overflow-y: auto;
   min-width: 320px;
   ${(props) =>
     props.type === "form" &&
     css`
       height: 95vh;
+
       @media (max-width: 400px) {
         width: 92vw;
         padding: 2rem 2rem;
@@ -45,6 +47,7 @@ const Overlay = styled.div`
   backdrop-filter: blur(4px);
   z-index: 1000;
   transition: all 0.5s;
+  overflow-y: auto;
 `;
 
 const Button = styled.button`

@@ -3,7 +3,7 @@ import { useCreateQuest } from "./useCreateQuest";
 import { useQuests } from "./useQuests";
 
 function useIntervals() {
-  const { createCabin } = useCreateQuest();
+  const { createQuest } = useCreateQuest();
   const { quests, isLoading, error } = useQuests();
 
   useEffect(() => {
@@ -62,7 +62,7 @@ function useIntervals() {
     });
 
     newQuests.forEach((newQuest) => {
-      createCabin(newQuest, {
+      createQuest(newQuest, {
         onSuccess: (data) => {
           console.log(`Quest ${newQuest.name} created for ${newQuest.date}`);
         },
@@ -73,7 +73,7 @@ function useIntervals() {
         },
       });
     });
-  }, [quests, isLoading, error, createCabin]);
+  }, [quests, isLoading, error, createQuest]);
 }
 
 export default useIntervals;
