@@ -47,7 +47,7 @@ function Dashboard() {
     <>
       <Row type="horizontal">
         <Heading as="h1">Add Quest</Heading>
-        <Modal>
+        <Modal type="form">
           <Modal.Open opens="cabin-form">
             <Button variation="third">
               {" "}
